@@ -1,6 +1,6 @@
 ## About
 
-Memcache server discovery based on Kubernetes endpoints for [Go memcache client](https://github.com/bradfitz/gomemcache).
+Memcache server discovery based on Kubernetes endpoints for [Go memcache client](https://github.com/bradfitz/gomemcache)
 
 How it works:
 * Watches endpoints containing memcache pod ips using [tiny k8s client](https://github.com/castai/k8s-client-go)
