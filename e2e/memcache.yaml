@@ -32,15 +32,6 @@ spec:
       labels:
         app.kubernetes.io/name: memcache
     spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-              - podAffinityTerm:
-                labelSelector:
-                  matchLabels:
-                    app.kubernetes.io/name: memcache
-                topologyKey: kubernetes.io/hostname
-                weight: 1
       securityContext:
         fsGroup: 1001
       containers:
