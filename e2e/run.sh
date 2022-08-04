@@ -29,3 +29,7 @@ kubectl wait pods -l app.kubernetes.io/name=memcache --for condition=Ready --tim
 
 kubectl apply -f e2e.yaml --dry-run=client -oyaml | sed "s/replace-img/$(echo "$img" | sed 's/\//\\\//g')/" | kubectl apply -f - -n e2e
 kubectl wait job/e2e --for=condition=complete --timeout=15s  -n e2e
+
+echo "Test completed"
+echo "Logs:"
+kubectl logs -l app=e2e -n e2e

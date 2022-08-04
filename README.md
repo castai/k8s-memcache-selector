@@ -10,8 +10,8 @@ How it works:
 
 In dynamic environments like Kubernetes both clients (pods calling memcache) and memcache pods could change.
 There are few issues:
-1. Calling memcache using clusterIP service is quite useless (unless you have one replica) as kernel will perform round robbin across service endpoints.
-2. You can make clusterIP service better by adding sessionAffinity. This will ensure that client pod always goes to the same memcache instance. But what happens if pods are redeployed?
+1. Calling memcache using clusterIP service is quite useless (unless you have one replica) as kernel will perform round-robin across service endpoints.
+2. You can enable sessionAffinity. This will ensure that client pod always goes to the same memcache instance. But what happens if pods are redeployed?
 3. Using StatefulSet with headless services and passing each endpoint is kind of static too.
 
 ## Installing
@@ -62,7 +62,7 @@ metadata:
   name: endpoints-watcher
 rules:
   - apiGroups: [ "" ]
-    resources: [ "pods" ]
+    resources: [ "endpoints" ]
     verbs: [ "get", "watch" ]
 ---
 kind: RoleBinding

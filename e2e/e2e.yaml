@@ -11,7 +11,7 @@ metadata:
   namespace: e2e
 rules:
   - apiGroups: [ "" ]
-    resources: [ "pods" ]
+    resources: [ "endpoints" ]
     verbs: [ "get", "watch" ]
 ---
 kind: RoleBinding
@@ -42,6 +42,6 @@ spec:
       serviceAccount: e2e
       containers:
         - name: e2e
-          image: replace-img
+          image: ghcr.io/castai/k8s-memcache-selector/e2e:08c1a77b1161295ac24a83d6f0c558560374b7da
       restartPolicy: Never
   backoffLimit: 0
