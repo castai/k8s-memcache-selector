@@ -47,7 +47,7 @@ func main() {
 
 ## Permissions
 
-You application needs permission to get and watch endpoints. Example manifest:
+Your application needs permission to get and watch endpoints. Example manifest:
 
 ```yaml
 apiVersion: v1
